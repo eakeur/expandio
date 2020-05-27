@@ -19,7 +19,7 @@ public class AppLanguage {
                 textView[4] = "\nExiting...";
                 textView[5] = "\nAn error occured! Please make sure you are typing the correct piece of information.\n Commas are not allowed!";
                 textView[6] = "\nInsert here the name of the material: ";
-                textView[7] = "\nInsert the linear coeficient of the material in the 10^-6 standard: ";
+                textView[7] = "\nInsert the linear coeficient of the material in the 10-⁶ standard: ";
                 textView[8] = "\nChoose which material to delete by typing its number:";
                 textView[9] = "Invalid input! Repeating...";
                 textView[10] = "\n1-Linear / 2-Superficial / 3-Volumetric\nChoose which expansion the material will suffer: ";
@@ -41,9 +41,9 @@ public class AppLanguage {
                 textView[2] = "\nOpcao invalida! Por favor, digite um numero relacionado a uma das opcoes .\n";
                 textView[3] = "\nPressione 1 para voltar ao menu. Pressione 0 para fechar o aplicativo.\n";
                 textView[4] = "\nSaindo...";
-                textView[5] = "\nUm erro ocorreu! Por favor, certifique-se de estar digitando informacoes pertinentes.\n Virgulas nao sao permitidas!";
+                textView[5] = "\nUm erro ocorreu! Por favor, certifique-se de estar digitando informacoes pertinentes.\n Virgulas nao sao recomendadas!";
                 textView[6] = "\nInsira aqui o tipo de material: ";
-                textView[7] = "\nInsira o coeficiente linear do material no padrao 10^-6 : ";
+                textView[7] = "\nInsira o coeficiente linear do material no padrao 10-⁶ : ";
                 textView[8] = "\nEscolha que material excluir digitando o numero dele:";
                 textView[9] = "Entrada invalida! Repetindo...";
                 textView[10] = "\n1-Linear / 2-Superficial / 3-Volumetrica \nEscolha que tipo de dilatacao o material sofrera: ";

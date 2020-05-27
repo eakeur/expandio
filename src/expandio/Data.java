@@ -76,7 +76,7 @@ public class Data {
      */
     public static void list() { readData();
         for (int i = 0; names[i] != null; i++) {
-            System.out.println("Nº"+(i+1)+": "+names[i].toUpperCase()+" - Linear coef. (x10^−6) = "+coefs[i]);            
+            System.out.println("Nº"+(i+1)+": "+names[i].toUpperCase()+" - Linear coef. (x10-⁶) = "+coefs[i]);            
         } 
 
     }
@@ -98,7 +98,7 @@ public class Data {
             word.show(7); crecep = dataInput.nextLine();
         } while (!Validate.name(crecep));
 
-        names[saved] = nrecep; coefs[saved] = crecep;
+        names[saved] = nrecep; coefs[saved] = crecep.replace(",", ".");
 
         try {
                 FileWriter nAdd = new FileWriter(nFile);

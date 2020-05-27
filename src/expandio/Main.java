@@ -38,9 +38,9 @@ public class Main {
         try {
 
             do {
-                System.out.println("\n\nSelecione o idioma de exibicao // Choose the app language."+
-                                   "\nDigite 1 para ingles // Insert 1 for choosing english."+
-                                   "\nDigite 0 para portugues // Insert 0 for choosing portuguese");
+                System.out.println("\n\nSelecione o idioma de exibicao     //     Choose the app language."+
+                                   "\nDigite 1 para ingles // Insert 1 for english."+
+                                    "\nDigite 0 para portugues // Insert 0 for portuguese\n");
 
                 AppLanguage.langChoice = sc.nextInt();
 

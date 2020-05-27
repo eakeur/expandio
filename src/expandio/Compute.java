@@ -1,6 +1,7 @@
 package expandio;
 
 import java.lang.Math;
+import java.text.DecimalFormat;
 import java.util.InputMismatchException;
 import java.util.Scanner;
 
@@ -8,6 +9,7 @@ public class Compute {
 
     private static AppLanguage word = new AppLanguage(AppLanguage.langChoice);
     static Scanner calcInput = new Scanner(System.in);
+    static DecimalFormat df = new DecimalFormat("0.000");
     static double result = 0, size = 0, temp = 0, temp2 = 0, pow = 0;
     static int i = 0, typeOfExpansion = 0;
 
@@ -55,10 +57,10 @@ public class Compute {
             calc(typeOfExpansion);
 
             if (AppLanguage.langChoice == 1) {
-                System.out.println("\nThe "+Data.names[i]+", originally measuring "+size+unit+", expands "+result+unit+" at a ΔT of "+(temp2-temp)+"\nThus, it measures now "+(result+size)+unit);
+                System.out.println("\nThe "+Data.names[i-1]+", originally measuring "+size+unit+", expands "+result+unit+" at a temperature variation of "+(temp2-temp)+"°C\nThus, it measures now "+(result+size)+unit);
 
             } else {
-                System.out.println("\n@ "+Data.names[i]+", inicialmente medindo "+size+unit+", dilata "+result+unit+" numa ΔT de "+(temp2-temp)+"\nPortanto el@ mede agora "+(result+size)+unit);
+                System.out.println("\n@ "+Data.names[i-1]+", inicialmente medindo "+size+unit+", dilata "+df.format(result)+unit+" numa variacao de temperatura de "+(temp2-temp)+"°C\nPortanto, el@ mede agora "+df.format((result+size))+unit);
                 
             }
 
@@ -81,7 +83,8 @@ public class Compute {
         String coefString = Data.coefs[i-1].replace(",", ".");
         double coeficient = Double.parseDouble(coefString);
         pow = Math.pow(10,-6);
-        return result = (typeOfExpansion*coeficient*pow)*size*(temp2-temp);
+        result = (typeOfExpansion*coeficient*pow)*size*(temp2-temp);
+        return result;
     }
 
 }
