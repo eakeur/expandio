@@ -1,0 +1,16 @@
+Steel
+Aluminium
+Lead
+Copper
+Iron
+Concrete
+Brass
+Gold
+Silver
+Common Glass
+Tungsten
+Water
+PVC
+Diamond
+Nickel
+Platinum
