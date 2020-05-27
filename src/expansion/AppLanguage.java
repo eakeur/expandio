@@ -62,11 +62,20 @@ public class AppLanguage {
 
         }
 
+    /**
+     * Esse metodo mostrara uma frase desejada 
+     * @param index e o indice da frase 
+     */
     public void show(int index) {
         System.out.println(textView[index]);
 
     }
 
+    /**
+     * Esse metodo retorna a frase desejada
+     * @param index e o indice da frase 
+     * @return
+     */
     public String getText(int index) {
         return textView[index];
     }

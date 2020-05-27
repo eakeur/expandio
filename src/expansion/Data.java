@@ -14,6 +14,10 @@ public class Data {
     static String nrecep = "";
     private static AppLanguage word = new AppLanguage(AppLanguage.langChoice);
 
+
+    /**
+     * Esse metodo ira ler os arquivos na memoria em txt
+     */
     public static void readData() {
         
         try {
@@ -30,6 +34,9 @@ public class Data {
         
     }
 
+    /**
+     * Esse metodo ira listar os materiais na memoria
+     */
     public static void list() { readData();
         for (int i = 0; names[i] != null; i++) {
             System.out.println("Nº"+(i+1)+": "+names[i].toUpperCase()+" - Linear coef. (x10^−6) = "+coefs[i]);            
@@ -37,6 +44,9 @@ public class Data {
 
     }
 
+    /**
+     * Esse metodo ira adicionar materiais na memoria em txt
+     */
     public static void add() {
 
         readData();
@@ -65,6 +75,10 @@ public class Data {
         }
     }
 
+
+    /**
+     * Esse metodo ira deletar materiais na memoria em txt
+     */
     public static void del() { list();
 
         int i = 0;
@@ -93,6 +107,10 @@ public class Data {
 
     } 
 
+
+    /**
+     * Esse metodo ira quantificar os materiais na memoria em txt
+     */
     public static int howManyMaterialsAre(){
         int quantity = 0;
         while (names[quantity] != null) {quantity++;}
