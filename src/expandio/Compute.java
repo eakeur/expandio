@@ -1,4 +1,4 @@
-package expansion;
+package expandio;
 
 import java.lang.Math;
 import java.util.InputMismatchException;

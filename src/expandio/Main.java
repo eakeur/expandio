@@ -1,4 +1,4 @@
-package expansion;
+package expandio;
 
 import java.util.Scanner;
 

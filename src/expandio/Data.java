@@ -1,4 +1,4 @@
-package expansion;
+package expandio;
 
 import java.io.File; 
 import java.io.FileReader; 
@@ -17,21 +17,56 @@ public class Data {
 
     /**
      * Esse metodo ira ler os arquivos na memoria em txt
+     * Antes de importa-los para as variaveis, ele verifica se o arquivo
+     * ja nao existe de sessoes passadas. Caso exista, ele o importa, caso nao,
+     * ele cria um com valores padroes definidos na classe AppLanguage
      */
+    
     public static void readData() {
         
         try {
-            File Namefile = new File("src/expansion/names.txt"); nFile = Namefile.getCanonicalPath();
-            File Coeffile = new File("src/expansion/coefs.txt"); cFile = Coeffile.getCanonicalPath();
+            
+            File Namefile = new File("names.txt");
+            File Coeffile = new File("coefs.txt");
+
+            if (Namefile.exists() && Coeffile.exists()) {
+
+                nFile = Namefile.getCanonicalPath();
+                cFile = Coeffile.getCanonicalPath();
+                   
+                
+            } else {
+
+                 Namefile.createNewFile();
+                 nFile = Namefile.getCanonicalPath();
+
+                 Coeffile.createNewFile();
+                 cFile = Coeffile.getCanonicalPath();
+
+                 FileWriter nAdd = new FileWriter(nFile); 
+                 nAdd.write(AppLanguage.dataBackup);nAdd.close();
+
+                 FileWriter cAdd = new FileWriter(cFile); 
+                 cAdd.write(AppLanguage.dataBackup2);cAdd.close();
+                
+            }
+        } catch (IOException e) {
+            word.show(5);
+            System.out.println(e);
+        }
+
+        try {
+
             Scanner nReader = new Scanner(new FileReader(nFile));
             Scanner cReader = new Scanner(new FileReader(cFile));
             for (int i = 0; nReader.hasNextLine() && cReader.hasNextDouble(); i++) {
-                names[i] = nReader.nextLine(); coefs[i] = cReader.nextDouble();
-           }    
-        } catch (IOException e) {
+                names[i] = nReader.nextLine(); 
+                coefs[i] = cReader.nextDouble();
+                } 
+
+        } catch (Exception e) {
             word.show(5);
         }
-        
     }
 
     /**
