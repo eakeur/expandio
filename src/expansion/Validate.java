@@ -1,6 +1,9 @@
 package expansion;
 
 public class Validate {
+
+    private static AppLanguage word = new AppLanguage(AppLanguage.langChoice);
+
     public static boolean name(String name) { // Esse metodo valida se a entrada não está vazia 
         boolean status;
         if (!name.isEmpty()) {
