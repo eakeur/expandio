@@ -10,7 +10,7 @@ public class Validate {
             status = true;    
         } else {
             status = false; 
-            System.out.println(AppLanguage.textView[9]);  
+            word.show(9);  
         }
 
         return status;
@@ -21,7 +21,7 @@ public class Validate {
             status = true;    
         } else {
             status = false; 
-            System.out.println(AppLanguage.textView[9]);  
+            word.show(9);   
         }
         return status;
     }
@@ -31,7 +31,7 @@ public class Validate {
             status = true;    
         } else {
             status = false; 
-            System.out.println(AppLanguage.textView[9]);  
+            word.show(9);   
         }
         return status;
     }
@@ -41,7 +41,7 @@ public class Validate {
             status = true;    
         } else {
             status = false;  
-            System.out.println(AppLanguage.textView[9]); 
+            word.show(9);  
         }
         return status;
     }

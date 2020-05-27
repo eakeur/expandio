@@ -1,6 +1,5 @@
 package expansion;
 
-import java.io.IOException;
 import java.util.Scanner;
 
 public class Main {
@@ -62,23 +61,20 @@ public class Main {
     private static void showOptions(){
 
         try {
+            word.show(0);
+            word.show(1);
 
-            do {
-
-                word.show(0);
-                word.show(1);
-
-                option = sc.nextInt();
+            option = sc.nextInt();
     
-                switch (option) {
-                    case 1: Data.add(); break;
-                    case 2: Data.del(); break;
-                    case 3: Data.list(); break;
-                    case 4: Compute.getInfo(); break;
+            switch (option) {
+                
+                case 1: Data.add(); break;
+                case 2: Data.del(); break;
+                case 3: Data.list(); break;
+                case 4: Compute.getInfo(); break;
 
-                    default: word.show(2); break;
-                }
-            } while (Validate.options(1, 4, option));
+                default: word.show(2); break;
+            }
 
         } catch (Exception e) {
             word.show(5);

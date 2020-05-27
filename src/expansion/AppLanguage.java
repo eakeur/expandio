@@ -10,7 +10,7 @@ public class AppLanguage {
         switch (option) {
 
             case 1:
-                textView[0] = "\nWelcome to NextPhysics! This is the thermal expansion calculator menu.\nChoose one of the options below:\n";
+                textView[0] = "\nWelcome to ExpandIO! This is the thermal expansion calculator menu.\nChoose one of the options below:\n";
                 textView[1] = "-- Add new materials (digit 1)\n-- Delete materials (digit 2)\n-- List materials (digit 3)\n-- Calculate thermal expansion (digit 4)\n";
                 textView[2] = "\nInvalid option! Please type a number related to one of the options listed.\n";
                 textView[3] = "\nPress 1 to get back to menu. Press 0 to exit the app.\n";
@@ -34,10 +34,10 @@ public class AppLanguage {
 
             case 0:
 
-                textView[0] = "\nBem-vindo ao NextPhysics! Este e o menu do calculo de dilatacao termica .\nEscolha uma das opcoes abaixo:\n";
+                textView[0] = "\nBem-vindo ao ExpandIO! Este e o menu do calculo de dilatacao termica .\nEscolha uma das opcoes abaixo:\n";
                 textView[1] = "-- Adicionar novos materiais (digite 1)\n-- Deletar materiais (digite 2)\n-- Listar materiais (digite 3)\n-- Calcular dilatacao termica (digite 4)\n";
                 textView[2] = "\nOpcao invalida! Por favor, digite um numero relacionado a uma das opcoes .\n";
-                textView[3] = "\nPressione 1 para voltar ao menu. Pressione 0 to fechar o aplicativo.\n";
+                textView[3] = "\nPressione 1 para voltar ao menu. Pressione 0 para fechar o aplicativo.\n";
                 textView[4] = "\nSaindo...";
                 textView[5] = "\nUm erro ocorreu! Por favor, certifique-se de estar digitando informacoes pertinentes.\n Virgulas nao sao permitidas!";
                 textView[6] = "\nInsira aqui o tipo de material: ";

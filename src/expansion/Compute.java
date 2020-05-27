@@ -54,7 +54,7 @@ public class Compute {
         
             calc(typeOfExpansion);
 
-            if (AppLanguage.langChoice == 0) {
+            if (AppLanguage.langChoice == 1) {
                 System.out.println("\nThe "+Data.names[i]+", originally measuring "+size+unit+", expands "+result+unit+" at a ΔT of "+(temp2-temp)+"\nThus, it measures now "+(result+size)+unit);
 
             } else {
