@@ -5,7 +5,11 @@ public class AppLanguage {
     public String textView[] = new String[20];
     public static int langChoice = 0;
     public static String dataBackup = "Steel\nAluminium\nLead\nCopper\nIron\nConcrete\nBrass\nGold\nSilver\nCommon Glass\nTungsten\nWater\nPVC\nDiamond\nNickel\nPlatinum\n";
+<<<<<<< HEAD
     public static String dataBackup2 = "11.0\n23.1\n29.0\n17.0\n11.8\n12.0\n19.0\n14.0\n18.0\n8.5\n4.5\n69.0\n43.2\n1.0\n13.0\n9.0\n";
+=======
+    public static String dataBackup2 = "11.0\n23.1\n29.0\n17.0\n11.8\n12.0\n19.0\n14.0\n18.0\n3.3\n4.5\n69.0\n43.2\n1.0\n13.0\n9.0\n";
+>>>>>>> de645ec17bf0e330fdb1d3fa541e37dcc7dcc0c7
 
     public AppLanguage(int option){
 
