@@ -8,10 +8,10 @@ import java.util.Scanner;
 
 public class Data {
 
-    static String names[] = new String[999]; static double coefs[] = new double[999], crecep = 0;
+    static String names[] = new String[999]; static String coefs[] = new String[999];
     static String nFile = ""; static String cFile = "";
     static Scanner dataInput = new Scanner(System.in);
-    static String nrecep = "";
+    static String nrecep = "", crecep = "";
     private static AppLanguage word = new AppLanguage(AppLanguage.langChoice);
 
 
@@ -59,9 +59,11 @@ public class Data {
 
             Scanner nReader = new Scanner(new FileReader(nFile));
             Scanner cReader = new Scanner(new FileReader(cFile));
-            for (int i = 0; nReader.hasNextLine() && cReader.hasNextDouble(); i++) {
+
+      
+            for (int i = 0; nReader.hasNextLine() && cReader.hasNextLine(); i++) {
                 names[i] = nReader.nextLine(); 
-                coefs[i] = cReader.nextDouble();
+                coefs[i] = cReader.nextLine();
                 } 
 
         } catch (Exception e) {
@@ -93,8 +95,8 @@ public class Data {
         } while (!Validate.name(nrecep));
 
         do {
-            word.show(7); crecep = dataInput.nextDouble();
-        } while (!Validate.doubleNumber(crecep));
+            word.show(7); crecep = dataInput.nextLine();
+        } while (!Validate.name(crecep));
 
         names[saved] = nrecep; coefs[saved] = crecep;
 
@@ -123,9 +125,9 @@ public class Data {
             } while (!Validate.options(1,howManyMaterialsAre(),i));
             i--;
 
-            names[i] = null; coefs[i] = 0;
+            names[i] = null; coefs[i] = null;
 
-            while (names[i+1] != null && coefs[i+1] != 0) { 
+            while (names[i+1] != null && coefs[i+1] != null) { 
                 names[i] = names[i+1]; coefs[i] = coefs[i+1]; i++; 
             }
 

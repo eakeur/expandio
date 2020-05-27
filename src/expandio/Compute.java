@@ -77,8 +77,11 @@ public class Compute {
      * @return o resultado do calculo
      */
     public static double calc(int typeOfExpansion) {
+
+        String coefString = Data.coefs[i-1].replace(",", ".");
+        double coeficient = Double.parseDouble(coefString);
         pow = Math.pow(10,-6);
-        return result = (typeOfExpansion*Data.coefs[i-1]*pow)*size*(temp2-temp);
+        return result = (typeOfExpansion*coeficient*pow)*size*(temp2-temp);
     }
 
 }
