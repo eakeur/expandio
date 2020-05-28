@@ -1,7 +1,5 @@
 # Compiled class file
 *.class
-/bin
-bin/
 *.gitpod.yml
 *.gitpod.Dockerfile
 
