@@ -11,21 +11,28 @@ public class Main {
 
     public static void main(String[] args) {
 
-
-
-        setLanguage();
-         
-        while (option == 1) {
-
-            do {
-                showOptions();
-                word.show(3);
-                option = sc.nextInt();
-            } while (!Validate.twoOptions(1, 0, option));
-            
+        var rep = new Repository();
+        try {
+            for (var mat : rep.getAll()) {
+                System.out.println(mat.getName());
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
         }
-            word.show(4);
-            sc.close(); Compute.calcInput.close();                             
+
+        // setLanguage();
+         
+        // while (option == 1) {
+
+        //     do {
+        //         showOptions();
+        //         word.show(3);
+        //         option = sc.nextInt();
+        //     } while (!Validate.twoOptions(1, 0, option));
+            
+        // }
+        //     word.show(4);
+        //     sc.close(); Compute.calcInput.close();                             
         
     }
 

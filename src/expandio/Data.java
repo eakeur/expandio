@@ -1,18 +1,90 @@
 package expandio;
 
-import java.io.File; 
+import java.io.File;
 import java.io.FileReader; 
 import java.io.FileWriter; 
 import java.io.IOException; 
 import java.util.Scanner;
+import java.util.ArrayList;
 
 public class Data {
+
+    private final File file;
+
+    public Data() {
+        file = new File("data.csv");
+        if (!file.exists()){
+            try {
+                file.createNewFile();
+                var backup = new File("backup.csv");
+                FileWriter content = new FileWriter(file); 
+                var reader = new FileReader(backup);
+                reader.transferTo(content);
+                reader.close();
+                content.close();
+            } catch (IOException e) {
+                System.err.println(e.toString());
+            }
+        }
+    }
 
     static String names[] = new String[999]; static String coefs[] = new String[999];
     static String nFile = ""; static String cFile = "";
     static Scanner dataInput = new Scanner(System.in);
     static String nrecep = "", crecep = "";
     private static AppLanguage word = new AppLanguage(AppLanguage.langChoice);
+
+
+    public ArrayList<String[]> read() throws IOException {
+        var reader = new Scanner(new FileReader(file));
+        var results = new ArrayList<String[]>();
+        while (reader.hasNextLine()){
+            var line = reader.nextLine();
+            if (line.trim() != "")
+                results.add(line.split("|"));
+        }
+        reader.close();
+        return results;
+    }
+
+    public ArrayList<String[]> findLine(String firstProperty) throws IOException {
+        var reader = new Scanner(new FileReader(file));
+        var results = new ArrayList<String[]>();
+        while (reader.hasNextLine()){
+            var line = reader.nextLine();
+            if (line.trim() != "" && line.startsWith(firstProperty))
+                results.add(line.split("|"));
+        }
+        reader.close();
+        return results;
+    }
+
+    public void add(String[] data) throws IOException{
+        var writer = new FileWriter(file); 
+        String line = "";
+        for (String string : data) {
+            line += line == "" ? string : "|" + string;
+            line += System.getProperty("line.separator");
+        }
+        writer.write(line);
+        writer.close();
+    }
+
+    public void remove(String firstProperty) throws IOException{
+        var actual = read();
+        var writer = new FileWriter(file); 
+        writer.flush();
+        for (var data : actual) {
+            if (data[0].equals(firstProperty)) continue;
+            var line = "";
+            for (String string : data) {
+                line += line == "" ? string : "|" + string;
+                line += System.getProperty("line.separator");
+            }
+            writer.write(line);
+        }
+        writer.close();
+    }
 
 
     /**
